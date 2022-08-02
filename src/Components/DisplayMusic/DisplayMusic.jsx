@@ -1,3 +1,5 @@
+import SongPresenter from "../SongPresenter/SongPresenter";
+
 
 const DisplayMusic = (props) => {
     return ( 
@@ -12,18 +14,7 @@ const DisplayMusic = (props) => {
             </tr>
         </thead>
         <tbody>
-            {props.parentEntries.map((music, index) => {
-            return (
-                <tr>
-                {/* <td>{index + 1}</td> */}
-                <td>{music.title}</td>
-                <td>{music.artist}</td>
-                <td>{music.album}</td>
-                <td>{music.release_date}</td>
-                <td>{music.genre}</td>
-                </tr>
-            );
-            })}
+            {props.music.map((song) => <SongPresenter  key={song.id} song={song}/>)}
         </tbody>
         </table>
      );
