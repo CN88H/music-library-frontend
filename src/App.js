@@ -24,10 +24,18 @@ function App() {
     setMusic(response.data)
   }
 
+  // async function addMusic(){
+  //   const response = await axios.post('http://127.0.0.1:8000/api/music/'):
+  //   console.log(response.data);
+  //   setMusic(response.data)
+  // }
+
   return (
     <div className="App">
+      <h1 className='header'>Music Library</h1>
       <DisplayMusic music={music}/>
-      {/* <AddMusicForm /> */} 
+      <h2>Add a Song</h2>
+      <AddMusicForm music={addSong}/> 
       {/* <button onClick={() => getAllSongs()}>Get all songs.</button> */}
     </div>
   );
