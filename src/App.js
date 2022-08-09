@@ -19,7 +19,11 @@ function App() {
     setMusic(response.data)
   }
 
-  // async function addMusic(){
+  // function addNewSong(song) {
+  //   let temptSong = [song, ...music]
+  //   setMusic(temptSong);
+  // }
+  // async function addNewSong(){
   //   const response = await axios.post('http://127.0.0.1:8000/api/music/'):
   //   console.log(response.data);
   //   setMusic(response.data)

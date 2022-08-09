@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 
 
@@ -10,18 +11,29 @@ const AddMusicForm = (addSong) => {
     const [releaseDate, setReleaseDate] = useState([]);
     const [genre, setGenre] = useState([]);
 
-    function handleSubmit(event) {
+
+
+    async function handleSubmit(event) {
+        // event.preventDefault();
+        // let newSong = {
+        //     title: title,
+        //     artist: artist,
+        //     album: album,
+        //     releaseDate: releaseDate,
+        //     genre: genre
+        // };
+        // console.log(newSong)
+        // addSong.addNewSong(newSong)
+
         event.preventDefault();
-        let newSong = {
-            title: title,
-            artist: artist,
-            album: album,
-            releaseDate: releaseDate,
-            genre: genre
-        };
-        console.log(newSong)
+        const response = await axios.post('http://127.0.0.1:8000/api/music/');
+        console.log(response);
     }
 
+
+
+
+    
     return ( 
         <form onSubmit={handleSubmit}>
             <label>Title</label>
