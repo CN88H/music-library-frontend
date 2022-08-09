@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 
-const AddMusicForm = (props) => {
+const AddMusicForm = (addSong) => {
 
     const [title, setTitle] = useState([]);
     const [artist, setArtist] = useState([]);
