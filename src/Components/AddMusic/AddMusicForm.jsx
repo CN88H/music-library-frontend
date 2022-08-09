@@ -8,7 +8,7 @@ const AddMusicForm = (addSong) => {
     const [title, setTitle] = useState([]);
     const [artist, setArtist] = useState([]);
     const [album, setAlbum] = useState([]);
-    const [releaseDate, setReleaseDate] = useState([]);
+    const [release_date, setReleaseDate] = useState([]);
     const [genre, setGenre] = useState([]);
 
 
@@ -26,8 +26,16 @@ const AddMusicForm = (addSong) => {
         // addSong.addNewSong(newSong)
 
         event.preventDefault();
-        const response = await axios.post('http://127.0.0.1:8000/api/music/');
-        console.log(response);
+        const response = {title, artist, album, release_date, genre};
+
+        fetch('http://127.0.0.1:8000/api/music/', {
+            method: 'POST',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(response)
+        })
+        
+        // await axios.post('http://127.0.0.1:8000/api/music/');
+        // console.log(response);
     }
 
 
@@ -36,15 +44,15 @@ const AddMusicForm = (addSong) => {
     
     return ( 
         <form onSubmit={handleSubmit}>
-            <label>Title</label>
+            <label>title</label>
             <input type='letter' value={title} onChange={(event) => setTitle(event.target.value)}/>
-            <label>Artist</label>
+            <label>artist</label>
             <input type='letter' value={artist} onChange={(event) => setArtist(event.target.value)}/>
-            <label>Album</label>
+            <label>album</label>
             <input type='letter' value={album} onChange={(event) => setAlbum(event.target.value)}/>
-            <label>Release Date</label>
-            <input type='date' value={releaseDate} onChange={(event) => setReleaseDate(event.target.value)}/>
-            <label>Genre</label>
+            <label>release_date</label>
+            <input type='date' value={release_date} onChange={(event) => setReleaseDate(event.target.value)}/>
+            <label>genre</label>
             <input type='letter' value={genre} onChange={(event) => setGenre(event.target.value)}/>
             <button type='submit'>Add</button>
         </form>
