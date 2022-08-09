@@ -10,8 +10,20 @@ const AddMusicForm = (addSong) => {
     const [releaseDate, setReleaseDate] = useState([]);
     const [genre, setGenre] = useState([]);
 
+    function handleSubmit(event) {
+        event.preventDefault();
+        let newSong = {
+            title: title,
+            artist: artist,
+            album: album,
+            releaseDate: releaseDate,
+            genre: genre
+        };
+        console.log(newSong)
+    }
+
     return ( 
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Title</label>
             <input type='letter' value={title} onChange={(event) => setTitle(event.target.value)}/>
             <label>Artist</label>
