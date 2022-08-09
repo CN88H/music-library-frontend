@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
 
 
 
@@ -14,16 +14,6 @@ const AddMusicForm = (addSong) => {
 
 
     async function handleSubmit(event) {
-        // event.preventDefault();
-        // let newSong = {
-        //     title: title,
-        //     artist: artist,
-        //     album: album,
-        //     releaseDate: releaseDate,
-        //     genre: genre
-        // };
-        // console.log(newSong)
-        // addSong.addNewSong(newSong)
 
         event.preventDefault();
         const response = {title, artist, album, release_date, genre};

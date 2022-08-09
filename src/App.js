@@ -32,6 +32,7 @@ function App() {
   return (
     <div className="App">
       <h1 className='header'>Music Library</h1>
+      
       <DisplayMusic music={music}/>
       <button onClick={() => getAllSongs()}>Get all songs.</button>
       <h2>Add a Song</h2>
