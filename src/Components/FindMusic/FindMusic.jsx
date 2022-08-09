@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+
 
 
 const FindMusic = (props) => {
-    const [song, setSong] = useState([]);
+  
 
-    
+
     return ( 
-
+        <input type='text' value={props.userInput} onChange={(event) => props.setUserInput(event.target.value)}/>
      );
 }
  
