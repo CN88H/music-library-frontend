@@ -25,9 +25,13 @@ function App() {
   return (
     <div className="App">
       <h1 className='header'>Music Library</h1>
+
       <FindMusic userInput={userInput} setUserInput={setUserInput}/>
+
       <DisplayMusic music={music} userInput={userInput}/>
+
       <button onClick={() => getAllSongs()}>Get all songs.</button>
+      
       <h2>Add a Song</h2>
       <AddMusicForm addSong={music}/> 
     </div>
