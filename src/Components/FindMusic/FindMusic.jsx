@@ -6,8 +6,12 @@ const FindMusic = (props) => {
   
 
 
-    return ( 
-        <input type='text' value={props.userInput} onChange={(event) => props.setUserInput(event.target.value)}/>
+    return (
+        <form>
+            <label>Search For Song</label>
+            <input type='text' value={props.userInput} onChange={(event) => props.setUserInput(event.target.value)}/>
+            <button type='submit'>Search</button>
+        </form> 
      );
 }
  
