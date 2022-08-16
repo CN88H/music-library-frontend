@@ -28,7 +28,7 @@ function App() {
 
       <FindMusic userInput={userInput} setUserInput={setUserInput}/>
 
-      <DisplayMusic music={music} userInput={userInput}/>
+      <DisplayMusic className='song_body' music={music} userInput={userInput}/>
 
       <button onClick={() => getAllSongs()}>Get all songs.</button>
       
